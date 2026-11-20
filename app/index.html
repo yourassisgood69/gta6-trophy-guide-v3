@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA 6 Platinum Tracker</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<header class="masthead">
+<p class="kicker">Grand Theft Auto VI · PlayStation 5</p>
+<h1>Leonida Trophy Guide</h1>
+<p class="lede">Every one of the 55 official trophies, with a guide that names its sources, a roadmap to the platinum, and a tracker that remembers your progress.</p>
+<p class="counts" id="counts">55 trophies · 1 platinum · 2 gold · 6 silver · 46 bronze · 28 hidden</p>
+</header>
+<main>
+<section class="panel progress-panel" aria-labelledby="progress-heading">
+<h2 id="progress-heading">Your progress</h2>
+<div class="progress-row">
+<div class="bar" role="progressbar" id="progress-bar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" aria-valuetext="0 of 55 trophies earned">
+<span class="bar-fill" id="progress-fill"></span>
+</div>
+<p class="progress-text" id="progress-text">0 of 55 earned</p>
+</div>
+<div class="save-row">
+<button type="button" id="export-button">Export progress</button>
+<button type="button" id="import-button">Import progress</button>
+<input type="file" id="import-file" accept="application/json,.json" hidden>
+<button type="button" id="reset-button">Reset progress</button>
+<p class="save-note" id="save-note" role="status">Progress saves in this browser automatically.</p>
+</div>
+</section>
+<nav class="views" aria-label="Guide views">
+<button type="button" class="view-button is-active" data-view="all" id="view-all">All trophies</button>
+<button type="button" class="view-button" data-view="roadmap" id="view-roadmap">Roadmap to platinum</button>
+<button type="button" class="view-button" data-view="missables" id="view-missables">Missable trophies</button>
+</nav>
+<section class="panel controls" aria-label="Filters and search">
+<label class="field">Search
+<input type="search" id="search-input" placeholder="Search a name, mission or place" autocomplete="off">
+</label>
+<label class="field">Grade
+<select id="grade-select">
+<option value="all">All grades</option>
+<option value="platinum">Platinum</option>
+<option value="gold">Gold</option>
+<option value="silver">Silver</option>
+<option value="bronze">Bronze</option>
+</select>
+</label>
+<label class="field">Kind
+<select id="kind-select">
+<option value="all">All kinds</option>
+<option value="story">Story</option>
+<option value="collectible">Collectibles</option>
+<option value="activity">Activities</option>
+<option value="exploration">Exploration</option>
+<option value="economy">Economy</option>
+<option value="combat">Combat and heists</option>
+<option value="other">Other moments</option>
+</select>
+</label>
+<label class="check"><input type="checkbox" id="missable-only"> Missable only</label>
+<label class="check"><input type="checkbox" id="spoiler-toggle"> Hide story spoilers</label>
+<label class="check"><input type="checkbox" id="earned-only"> Earned only</label>
+</section>
+<section id="roadmap-section" class="panel roadmap" hidden aria-labelledby="roadmap-heading">
+<h2 id="roadmap-heading">Roadmap to the platinum</h2>
+<p>Play in this order. Story first, then strangers, then activities, then collectibles, and the combat and money trophies last. Only three trophies can be missed, and all three are flagged below.</p>
+<ol id="roadmap-list" class="roadmap-list"></ol>
+</section>
+<section id="missables-section" class="panel missables" hidden aria-labelledby="missables-heading">
+<h2 id="missables-heading">Missable trophies — only 3</h2>
+<p>A trophy is flagged missable only when story progress or a one-time choice can lock it out for good. Finishing a story mission is never missable, because missions can be replayed, and a repeatable open-world feat is never missable either.</p>
+<div id="missables-list" class="card-grid"></div>
+</section>
+<section aria-labelledby="list-heading">
+<h2 id="list-heading" class="visually-hidden">Trophy checklist</h2>
+<p class="result-line" id="result-line" role="status">Showing all 55 trophies.</p>
+<div id="trophy-list" class="card-grid"></div>
+<p class="empty-note" id="empty-note" hidden>No trophies match these filters. Try clearing the search or choosing another grade.</p>
+</section>
+<section class="panel sources-panel" aria-labelledby="sources-heading">
+<h2 id="sources-heading">Where the facts come from</h2>
+<p>Names, descriptions, grades and hidden flags follow the official PlayStation 5 list as published on Exophase and PSNProfiles, which agree on every name, description and grade. Counts such as 42 Shooting Range challenges or 18 meditation spots come from PSNProfiles. Every guide is written in our own words from the official descriptions, and each one names its sources beside it. Where a method is not yet confirmed, the guide says so plainly instead of guessing.</p>
+</section>
+</main>
+<dialog id="detail-dialog" aria-labelledby="dialog-title">
+<div class="dialog-body">
+<h2 id="dialog-title"></h2>
+<p class="dialog-meta" id="dialog-meta"></p>
+<p class="dialog-desc" id="dialog-desc"></p>
+<p class="dialog-guide" id="dialog-guide"></p>
+<p class="dialog-why" id="dialog-why" hidden></p>
+<div class="dialog-actions">
+<button type="button" id="dialog-earned">Mark earned</button>
+<button type="button" id="dialog-close">Close</button>
+</div>
+</div>
+</dialog>
+<footer>
+<p>Leonida Trophy Guide — an unofficial, open guide built for the make.fun GTA 6 trophy guide competition. Grand Theft Auto is a trademark of its owner; this guide uses no official artwork or logos.</p>
+</footer>
+</body>
+</html>
